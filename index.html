@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="wrap">
+        <header id="header" class="clearfix">
+            <h1 class="logo">logo</h1>
+            <nav class="nav">
+                <ul class="clearfix">
+                    <li><a href="#">MENU-1</a>
+                        <ul class="submenu">
+                            <li><a href="#">subMenu-1</a></li>
+                            <li><a href="#">subMenu-2</a></li>
+                            <li><a href="#">subMenu-3</a></li>
+                            <li><a href="#">subMenu-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">MENU-2</a>
+                        <ul class="submenu">
+                            <li><a href="#">subMenu-1</a></li>
+                            <li><a href="#">subMenu-2</a></li>
+                            <li><a href="#">subMenu-3</a></li>
+                            <li><a href="#">subMenu-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">MENU-3</a>
+                        <ul class="submenu">
+                            <li><a href="#">subMenu-1</a></li>
+                            <li><a href="#">subMenu-2</a></li>
+                            <li><a href="#">subMenu-3</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">MENU-4</a>
+                        <ul class="submenu">
+                            <li><a href="#">subMenu-1</a></li>
+                            <li><a href="#">subMenu-2</a></li>
+                            <li><a href="#">subMenu-3</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <!--header-->
+        <section id="banner">
+            <h2>image slide</h2>
+        </section>
+        <!--banner-->
+        <section id="contents" class="clearfix">
+            <div class="cont1"><h3>
+                <div class="tab-menu">
+                    <div class="tab-btn">
+                        <ul>
+                            <li class="active"><a href="#">notice1</a></li>
+                            <li><a href="#">notice2</a></li>
+                        </ul>
+                    </div>
+                    <div class="tab-cont">
+                        <div>
+                            1. Tab Menu<br>
+                            1. WOW
+                        </div>
+                        <div>
+                            2. Tab Menu<br>
+                            2. L.O.L
+                        </div>
+                    </div>
+                </div>
+            </h3></div>
+            <div class="cont2"><h3>galary</h3></div>
+            <div class="cont3"><h3 class="layerPopup">popup</h3></div>
+        </section>
+        <!--contents-->
+        <footer id="footer">
+            <div class="foot1"><h3>logo</h3></div>
+            <div class="foot2"><h3>Copyright</h3></div>
+            <div class="foot3"><h3>SNS</h3></div>
+        </footer>
+        <!--footer-->
+    </div>
+    <!--layer popup-->
+    <div class="layer">
+        <h2>title</h2>
+        <a href="#" class="close">close</a>
+    </div>
+    <!--wrap-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(".nav > ul > li").mouseover(function(){
+            $(this).find(".submenu").stop().slideDown();
+        });
+        $(".nav > ul > li").mouseout(function(){
+            $(this).find(".submenu").stop().slideUp();
+        });
+        var tabBtn = $(".tab-btn > ul > li");
+        var tabCont = $(".tab-cont > div");
+
+        tabCont.hide().eq(0).show();
+        tabBtn.click(function(e){
+            e.preventDefault();
+            var target = $(this);
+            var index = target.index();
+            tabBtn.removeClass("active");
+            target.addClass("active");
+            tabCont.css("display","none");
+            tabCont.eq(index).css("display","block");
+        })
+        $(".layerPopup").click(function(){
+            $(".layer").css("display","block");
+        });
+        $(".close").click(function(){
+            $(".layer").css("display","none");
+        });
+    </script>
+</body>
+</html>
