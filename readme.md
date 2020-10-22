@@ -1,2 +1,2 @@
 hello this is readme file
-this web site is
+this web site is my practice site
