@@ -3,7 +3,9 @@
     margin: 0;
     padding: 0;
     color: white;
+    
 }
+
 .clearfix::before, .clearfix::after{display: block; content: ''; clear: both;}
 a{
     color: lightcoral;
@@ -24,6 +26,8 @@ table{
 #header{
     text-align: center;
     background-color: lightblue;
+    position: relative;
+    z-index: 9999;
 }
 #header .logo{
     width: 250px;
@@ -67,12 +71,28 @@ table{
 }
 /*banner*/
 #banner{
-    height: 400px;
+    height: 360px;
     background: cornflowerblue;
     line-height: 400px;
     text-align: center;
+    width: 1200px;
+    overflow:hidden;
+}
+/*slider*/
+.slideList{
+    position: relative;
+    width: 1200px;
+    height: 360px;
+}
+.slideList .slideImg img{
+    display: block;
 }
 /*contents*/
+#contents{
+    position: relative;
+    z-index: 900;
+    
+}
 #contents > div{
     float: left;
     width: 33.333333%;
@@ -124,6 +144,8 @@ table{
     height: 100px;
     background: powderblue;
     text-align: center;
+    position: relative;
+    z-index: 900;
 }
 #footer > div{
     line-height: 100px;
